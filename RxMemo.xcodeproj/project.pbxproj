@@ -14,6 +14,7 @@
 		04A92A13288A7449008E7684 /* RxMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A11288A7449008E7684 /* RxMemo.xcdatamodeld */; };
 		04A92A15288A744A008E7684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A92A14288A744A008E7684 /* Assets.xcassets */; };
 		04A92A18288A744A008E7684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A92A16288A744A008E7684 /* LaunchScreen.storyboard */; };
+		04A92A21288A7683008E7684 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04A92A20288A7683008E7684 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A92A21288A7683008E7684 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = RxMemo;
+			packageProductDependencies = (
+				04A92A20288A7683008E7684 /* RxSwift */,
+			);
 			productName = RxMemo;
 			productReference = 04A92A05288A7449008E7684 /* RxMemo.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 04A929FC288A7449008E7684;
+			packageReferences = (
+				04A92A1F288A7683008E7684 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 04A92A06288A7449008E7684 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -362,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04A92A1F288A7683008E7684 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04A92A20288A7683008E7684 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04A92A1F288A7683008E7684 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		04A92A11288A7449008E7684 /* RxMemo.xcdatamodeld */ = {
