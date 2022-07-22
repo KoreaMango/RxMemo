@@ -15,6 +15,8 @@
 		04A92A18288A744A008E7684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A92A16288A744A008E7684 /* LaunchScreen.storyboard */; };
 		04A92A21288A7683008E7684 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04A92A20288A7683008E7684 /* RxSwift */; };
 		04A92A29288A784A008E7684 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A28288A784A008E7684 /* Memo.swift */; };
+		04A92A2B288A793B008E7684 /* MemoStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A2A288A793B008E7684 /* MemoStorageType.swift */; };
+		04A92A2F288A7A09008E7684 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A2E288A7A09008E7684 /* MemoryStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		04A92A17288A744A008E7684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A92A19288A744A008E7684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A92A28288A784A008E7684 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		04A92A2A288A793B008E7684 /* MemoStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorageType.swift; sourceTree = "<group>"; };
+		04A92A2E288A7A09008E7684 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,6 @@
 				04A92A22288A778A008E7684 /* Model */,
 				04A92A14288A744A008E7684 /* Assets.xcassets */,
 				04A92A19288A744A008E7684 /* Info.plist */,
-				04A92A11288A7449008E7684 /* RxMemo.xcdatamodeld */,
 			);
 			path = RxMemo;
 			sourceTree = "<group>";
@@ -100,6 +103,9 @@
 		04A92A25288A77BC008E7684 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				04A92A2D288A79F1008E7684 /* CoreDataStorage */,
+				04A92A2C288A79E1008E7684 /* MemoryStorage */,
+				04A92A2A288A793B008E7684 /* MemoStorageType.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -118,6 +124,22 @@
 				04A92A0A288A7449008E7684 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		04A92A2C288A79E1008E7684 /* MemoryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				04A92A2E288A7A09008E7684 /* MemoryStorage.swift */,
+			);
+			path = MemoryStorage;
+			sourceTree = "<group>";
+		};
+		04A92A2D288A79F1008E7684 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				04A92A11288A7449008E7684 /* RxMemo.xcdatamodeld */,
+			);
+			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A92A2F288A7A09008E7684 /* MemoryStorage.swift in Sources */,
 				04A92A09288A7449008E7684 /* AppDelegate.swift in Sources */,
+				04A92A2B288A793B008E7684 /* MemoStorageType.swift in Sources */,
 				04A92A0B288A7449008E7684 /* SceneDelegate.swift in Sources */,
 				04A92A13288A7449008E7684 /* RxMemo.xcdatamodeld in Sources */,
 				04A92A29288A784A008E7684 /* Memo.swift in Sources */,
