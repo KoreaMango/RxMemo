@@ -59,5 +59,11 @@ class MemoListViewController: UIViewController, ViewModelBindableType {
             .bind(to: viewModel.detailAction.inputs)
             .disposed(by: rx.disposeBag)
     
+        /// 테이블 뷰에서 스와이프 델리트 기능을 활성화하고 삭제 버튼과 액션을 바인딩한다.
+        /// 이번에도 델리게이트 메소드를 직접 구현하지 않고 rxcocoa를 통해 구현한다.
+        listTableView.rx.modelDeleted(Memo.self) // 메모를 삭제할 때마다 넥스트 이벤트를 방출하는 컨트롤 이벤트를 리턴한다.
+            .bind(to: viewModel.detailAction.inputs)
+            .disposed(by: rx.disposeBag)
+        
     }
 }
