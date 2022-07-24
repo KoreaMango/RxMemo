@@ -5,17 +5,34 @@
 //  Created by 강민규 on 2022/07/22.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 import Action
+import RxDataSources
+
+/// 테이블 뷰의 데이터를 바인딩할 때 하나의 섹션에 출력만 하는 거면 Rxcocoa로 충분하다.
+/// 하지만 2개 이상의 섹션이나 편집기능을 구현하려면 RxdataSource를 사용해야한다.
+typealias MemoSectionModel = AnimatableSectionModel<Int, Memo>
 
 /// 쓰기 모드로 화면 전환하는 것은 리스트 뷰에서 해줘야한다.
 /// 네브바에 버튼을 누르면 모달 방식으로 표시한다.
 class MemoListViewModel : CommonViewModel{
+    
+    let dataSource: RxTableViewSectionedAnimatedDataSource<MemoSectionModel> = {
+        let ds = RxTableViewSectionedAnimatedDataSource<MemoSectionModel>(configureCell: {(dataSource, tableView, indexPath, memo) -> UITableViewCell in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for : indexPath)
+            cell.textLabel?.text = memo.content
+            return cell
+        })
+        
+        ds.canEditRowAtIndexPath = {_,_ in return true }
+        return ds
+    }()
+    
     /// 테이블 뷰와 바인딩할 수 있는 속성을 추가한다.
     /// 이 속성은 메모 배열을 방출한다.
-    var memoList : Observable<[Memo]> {
+    var memoList : Observable<[MemoSectionModel]> {
         return storage.memoList()
     }
     

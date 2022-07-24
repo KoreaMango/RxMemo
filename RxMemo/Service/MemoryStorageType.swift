@@ -16,7 +16,7 @@ protocol MemoryStorageType{
     /// Observable로 리턴함으로써 구독자가 작업 결과를 원하는 방식으로 처리할 수 있게 해줌.
     
     @discardableResult
-    func memoList() -> Observable<[Memo]>
+    func memoList() -> Observable<[MemoSectionModel]>
     
     
     @discardableResult
