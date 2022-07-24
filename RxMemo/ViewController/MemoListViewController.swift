@@ -43,6 +43,21 @@ class MemoListViewController: UIViewController, ViewModelBindableType {
         /// 클로져에서 셀 구성코드만 구현하면 된다.
         
         addButton.rx.action = viewModel.makeCreateAction()
+        
+        /// 테이블 뷰에서 메모를 선택하면 뷰모델을 통해서 디테일 액션을 전달하고
+        /// 선택한 셀은 선택해제 한다.
+        /// 1. 선택한 메모
+        /// 2. 인덱스 패스
+        /// Rxcocoa 는 선택 이벤트 처리에 사용하는 다양한 멤버를 익스텐션으로 제공한다.
+        /// 선택한 인덱스가 필요한 경우 itemSelected 속성을
+        /// 선택한 데이터가 필요한 경우 modelSelected 속성을
+        Observable.zip(listTableView.rx.modelSelected(Memo.self), listTableView.rx.itemSelected) // 이렇게 하면 선택한 메모와 인덱스 패스가 튜플로 나옴
+            .do(onNext: { [unowned self] (_ , indexPath) in
+                self.listTableView.deselectRow(at: indexPath, animated: true)
+            })
+            .map{ $0.0}
+            .bind(to: viewModel.detailAction.inputs)
+            .disposed(by: rx.disposeBag)
+    
     }
-
 }

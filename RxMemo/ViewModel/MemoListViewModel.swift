@@ -52,4 +52,20 @@ class MemoListViewModel : CommonViewModel{
             }
         }
     }
+    
+    /// 속성형태로 액션을 생성
+    /// 액션의 입력 형식은 메모, 출력형식은 Void 이다.
+    /// 클로저 내부에서 셀프에 접근하기 위해 Lazy로 생성했다.
+    lazy var detailAction: Action<Memo, Void> = {
+        return Action { memo in
+            
+            let detailViewModel = MemoDetailViewModel(memo: memo, title: "메모 보기", sceneCoordinator: self.sceneCoordinator, storage: self.storage)
+            
+            let detailScene = Scene.detail(detailViewModel)
+            
+            return self.sceneCoordinator.transition(to: detailScene, using: .push, animated: true).asObservable().map{_ in }
+        }
+    }()
+    
+   
 }

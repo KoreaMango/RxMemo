@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import Action
 
 class MemoDetailViewController: UIViewController, ViewModelBindableType{
 
@@ -44,5 +47,7 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType{
                     fatalError()
                 }
             }.disposed(by: rx.disposeBag)
+        
+        
     }
 }

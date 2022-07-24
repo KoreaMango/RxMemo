@@ -10,6 +10,13 @@ import RxSwift
 import RxCocoa
 import UIKit
 
+extension UIViewController {
+    /// 실제로 화면에 표시되어있는 뷰 컨트롤러를 리턴하는 메소드
+    var sceneViewController : UIViewController {
+        return self.children.first ?? self
+    }
+}
+
 class SceneCoordinator: SceneCoordinatorType {
     /// 리소스 정리에 사용되는 DisposeBag
     private let bag = DisposeBag()
@@ -36,17 +43,26 @@ class SceneCoordinator: SceneCoordinatorType {
         /// Scene 열거형에서 구현한 것.
         switch style {
         case .root:
-            currentVC = target
+            currentVC = target.sceneViewController
             window.rootViewController = target
             subject.onCompleted()
             
         case .push:
+            
             guard let nav = currentVC.navigationController else {
                 subject.onError(TransitionError.navigationControllerMissing)
                 break
             }
+            
+            /// 델리게이트 메소드가 호출될 때마다 넥스트 이벤트를 방출한다.
+            nav.rx.willShow
+                .subscribe(onNext: { [unowned self] evt in
+                    self.currentVC = evt.viewController.sceneViewController
+                })
+                .disposed(by: bag)
+            
             nav.pushViewController(target, animated: animated)
-            currentVC = target
+            currentVC = target.sceneViewController
             
             subject.onCompleted()
             
@@ -54,8 +70,7 @@ class SceneCoordinator: SceneCoordinatorType {
             currentVC.present(target, animated: animated){
                 subject.onCompleted()
             }
-            currentVC = target
-        }
+            currentVC = target.sceneViewController        }
         
 
         return subject.ignoreElements().asCompletable()
@@ -71,7 +86,7 @@ class SceneCoordinator: SceneCoordinatorType {
             
             if let presentingVC = self.currentVC.presentingViewController {
                 self.currentVC.dismiss(animated: animated){
-                    self.currentVC = presentingVC
+                    self.currentVC = presentingVC.sceneViewController
                     completable(.completed)
                 }
             }
