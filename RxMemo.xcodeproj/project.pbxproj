@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04217EF3288D369B00575037 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04217EF2288D369B00575037 /* CommonViewModel.swift */; };
 		04A92A09288A7449008E7684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A08288A7449008E7684 /* AppDelegate.swift */; };
 		04A92A0B288A7449008E7684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A0A288A7449008E7684 /* SceneDelegate.swift */; };
 		04A92A10288A7449008E7684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A92A0E288A7449008E7684 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04217EF2288D369B00575037 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		04A92A05288A7449008E7684 /* RxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A92A08288A7449008E7684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A92A0A288A7449008E7684 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				04A92A40288A86E8008E7684 /* MemoDetailViewModel.swift */,
 				04A92A42288A8701008E7684 /* MemoComposeViewModel.swift */,
 				04A92A44288A871D008E7684 /* ViewModelBindableType.swift */,
+				04217EF2288D369B00575037 /* CommonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				04A92A4B288A8B8D008E7684 /* SceneCoordinatorType.swift in Sources */,
 				04A92A3F288A86C9008E7684 /* MemoListViewModel.swift in Sources */,
 				04A92A41288A86E8008E7684 /* MemoDetailViewModel.swift in Sources */,
+				04217EF3288D369B00575037 /* CommonViewModel.swift in Sources */,
 				04A92A47288A8965008E7684 /* TransitionModel.swift in Sources */,
 				04A92A39288A8648008E7684 /* MemoListViewController.swift in Sources */,
 				04A92A3D288A8695008E7684 /* MemoComposeViewController.swift in Sources */,
