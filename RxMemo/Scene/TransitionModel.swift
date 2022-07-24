@@ -7,11 +7,13 @@
 
 import Foundation
 
+/// 전환 방식을 표현하는 열거형이다.
 enum TransitionStyle {
     case root
     case push
     case modal
 }
+
 
 enum TransitionError : Error{
     case navigationControllerMissing

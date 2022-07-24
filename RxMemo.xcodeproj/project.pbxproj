@@ -14,7 +14,7 @@
 		04A92A15288A744A008E7684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A92A14288A744A008E7684 /* Assets.xcassets */; };
 		04A92A18288A744A008E7684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A92A16288A744A008E7684 /* LaunchScreen.storyboard */; };
 		04A92A29288A784A008E7684 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A28288A784A008E7684 /* Memo.swift */; };
-		04A92A2B288A793B008E7684 /* MemoStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A2A288A793B008E7684 /* MemoStorageType.swift */; };
+		04A92A2B288A793B008E7684 /* MemoryStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A2A288A793B008E7684 /* MemoryStorageType.swift */; };
 		04A92A2F288A7A09008E7684 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A92A2E288A7A09008E7684 /* MemoryStorage.swift */; };
 		04A92A35288A7FA2008E7684 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 04A92A34288A7FA2008E7684 /* RxCocoa */; };
 		04A92A37288A7FA2008E7684 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04A92A36288A7FA2008E7684 /* RxSwift */; };
@@ -41,7 +41,7 @@
 		04A92A17288A744A008E7684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A92A19288A744A008E7684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A92A28288A784A008E7684 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
-		04A92A2A288A793B008E7684 /* MemoStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorageType.swift; sourceTree = "<group>"; };
+		04A92A2A288A793B008E7684 /* MemoryStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageType.swift; sourceTree = "<group>"; };
 		04A92A2E288A7A09008E7684 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		04A92A38288A8648008E7684 /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
 		04A92A3A288A8678008E7684 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			children = (
 				04A92A2D288A79F1008E7684 /* CoreDataStorage */,
 				04A92A2C288A79E1008E7684 /* MemoryStorage */,
-				04A92A2A288A793B008E7684 /* MemoStorageType.swift */,
+				04A92A2A288A793B008E7684 /* MemoryStorageType.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 				04A92A3B288A8678008E7684 /* MemoDetailViewController.swift in Sources */,
 				04A92A45288A871D008E7684 /* ViewModelBindableType.swift in Sources */,
 				04A92A09288A7449008E7684 /* AppDelegate.swift in Sources */,
-				04A92A2B288A793B008E7684 /* MemoStorageType.swift in Sources */,
+				04A92A2B288A793B008E7684 /* MemoryStorageType.swift in Sources */,
 				04A92A0B288A7449008E7684 /* SceneDelegate.swift in Sources */,
 				04A92A13288A7449008E7684 /* RxMemo.xcdatamodeld in Sources */,
 				04A92A4B288A8B8D008E7684 /* SceneCoordinatorType.swift in Sources */,
