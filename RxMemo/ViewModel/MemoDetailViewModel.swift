@@ -47,4 +47,34 @@ class MemoDetailViewModel : CommonViewModel {
             .map{ _ in }
         
     }
+    /// 내용을 편집하고 버튼을 탭하면 실행되는 메소드
+    func performUpdate(memo: Memo) -> Action<String, Void> {
+        return Action {input in
+            self.storage.update(memo: memo, content: input)
+                .subscribe(onNext: { updated in
+                    /// 새로운 내용을 서브젝트로 전달
+                    /// 이후 서브젝트와 바인딩 되어있는 테이블뷰가 새로운 내용으로 바뀜
+                    self.contents.onNext([
+                        updated.content,
+                        self.formatter.string(from: updated.insertDate)
+                    ])
+                })
+                .disposed(by: self.rx.disposeBag)
+            
+            return Observable.empty()
+        }
+    }
+    
+    func makeEditAction() -> CocoaAction {
+        return CocoaAction { _ in
+            let composeViewModel = MemoComposeViewModel(title: "메모 편집", content: self.memo.content, sceneCoordinator: self.sceneCoordinator, storage: self.storage, saveAction: self.performUpdate(memo: self.memo))
+            
+            let composeScene = Scene.compose(composeViewModel)
+            
+            return self.sceneCoordinator.transition(to: composeScene, using: .modal, animated: true).asObservable().map{_ in }
+        }
+    }
+    
+    
+    
 }
