@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class MeomoryStorage: MemoryStorageType{
+class MemoryStorage: MemoryStorageType{
     
     /// 메모를 저장할 배열, 더미 데이터 추가, 외부에 직접 접근할 이유가 없기 때문에 private, Observable을 통해서 외부로 나감.
     /// 이 Observable은 배열의 상태가 업데이트되면 새로운 Next 이벤트를 방출해야한다.
