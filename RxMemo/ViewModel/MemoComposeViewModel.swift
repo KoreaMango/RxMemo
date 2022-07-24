@@ -11,7 +11,7 @@ import RxCocoa
 import Action
 
 
-class MemoCoposeViewModel :CommonViewModel{
+class MemoComposeViewModel :CommonViewModel{
     /// Compose Scene 에 표시할 메모를 저장하는 속성
     private let content : String?
     
@@ -24,7 +24,7 @@ class MemoCoposeViewModel :CommonViewModel{
     let saveAction: Action<String, Void>
     let cancelAction: CocoaAction
     
-    init(title: String, content: String? = nil , sceneCoordinator: SceneCoordinator, storage: MemoryStorageType, saveAction: Action<String, Void>? = nil, cancelAction: CocoaAction? = nil){
+    init(title: String, content: String? = nil , sceneCoordinator: SceneCoordinatorType, storage: MemoryStorageType, saveAction: Action<String, Void>? = nil, cancelAction: CocoaAction? = nil){
         self.content = content
         
         /// 액션이 nil이라 여기서 랩핑

@@ -13,7 +13,7 @@ import NSObject_Rx
 
 class MemoComposeViewController: UIViewController, ViewModelBindableType{
 
-    var viewModel: MemoCoposeViewModel!
+    var viewModel: MemoComposeViewModel!
     
     @IBOutlet weak var cancelButton : UIBarButtonItem!
     @IBOutlet weak var saveButton : UIBarButtonItem!

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         /// 앱이 시작되면 아래 두 인스턴스를 생성
         /// 뷰 모델은 두 인스턴스를 통해서 메모를 저장하고 화면전환을 처리한다.
-        /// 생성자를 통해 의존성을 주입했다. 
+        /// 생성자를 통해 의존성을 주입했다.
         let storage = MemoryStorage()
         let coordinator = SceneCoordinator(window: window!)
         let listViewModel = MemoListViewModel(title: "나의 메모", sceneCoordinator: coordinator , storage: storage)

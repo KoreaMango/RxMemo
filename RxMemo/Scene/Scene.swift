@@ -11,7 +11,7 @@ import UIKit
 enum Scene {
     case list(MemoListViewModel)
     case detail(MemoDetailViewModel)
-    case compose(MemoCoposeViewModel)
+    case compose(MemoComposeViewModel)
 }
 /// 스토리보드에 있는 Scene 을 생성하고
 /// 연관 값이 저장된 뷰 모델을 Binding 해서 리턴하는 메소드를 구현한다.

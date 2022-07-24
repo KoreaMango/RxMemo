@@ -41,6 +41,8 @@ class MemoListViewController: UIViewController, ViewModelBindableType {
         /// 데이터 소스 메소드 구현 없이 이렇게 짧게 구현 가능하다.
         /// 그리고 셀을 재사용 큐에서 리턴하는 부분도 자동으로 처리되서
         /// 클로져에서 셀 구성코드만 구현하면 된다.
+        
+        addButton.rx.action = viewModel.makeCreateAction()
     }
 
 }
